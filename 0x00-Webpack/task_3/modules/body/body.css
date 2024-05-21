@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  #counter-btn {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+  }
+  
+  #counter {
+    font-size: 18px;
+  }  
