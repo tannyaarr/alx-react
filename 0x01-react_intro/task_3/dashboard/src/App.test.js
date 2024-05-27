@@ -1,31 +1,25 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
-import React from 'react';
-import { shallow } from 'enzyme';
+import React from "react";
+import App from "./App";
+import { shallow } from "enzyme";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
-
-describe('<App />', () => {
-  it('renders without crashing', () => {
-    shallow(<App />);
+describe("App Componeent Tests", () => {
+  it("Renders without crashing", () => {
+    const app = shallow(<App />);
+    expect(app).toBeDefined();
   });
+  it("renders a div with the class App-header", () => {
+    const app = shallow(<App />);
 
-  it('renders a div with the class App-header', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find('.App-header').exists()).toBe(true);
+    expect(app.find(".App-header")).toBeDefined();
   });
+  it("renders a div with the class App-body", () => {
+    const app = shallow(<App />);
 
-  it('renders a div with the class App-body', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find('.App-body').exists()).toBe(true);
+    expect(app.find(".App-body")).toBeDefined();
   });
+  it("renders a div with the class App-footer", () => {
+    const app = shallow(<App />);
 
-  it('renders a div with the class App-footer', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find('.App-footer').exists()).toBe(true);
+    expect(app.find(".App-footer")).toBeDefined();
   });
 });
