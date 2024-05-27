@@ -1,15 +1,9 @@
 import React from "react";
-import logo from "../assets/holberton-logo.jpg";
-import "./App.css";
-import { getFullYear, getFooterCopy } from "../utils/utils";
+import "./Login.css";
 
-function App() {
+function Login() {
   return (
-    <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>School dashboard</h1>
-      </div>
+    <React.Fragment>
       <div className="App-body">
         <p>Login to access the full dashboard</p>
         <form>
@@ -20,11 +14,8 @@ function App() {
           <button>OK</button>
         </form>
       </div>
-      <div className="App-footer">
-        Copyright {getFullYear()} - {getFooterCopy()}
-      </div>
-    </div>
+    </React.Fragment>
   );
 }
 
-export default App;
+export default Login;
