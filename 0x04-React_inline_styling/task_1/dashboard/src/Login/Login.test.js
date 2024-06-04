@@ -1,0 +1,25 @@
+import { shallow } from "enzyme";
+import React from "react";
+import Login from "./Login";
+import { StyleSheetTestUtils } from 'aphrodite'; // Import StyleSheetTestUtils
+
+// Suppress style injection
+StyleSheetTestUtils.suppressStyleInjection();
+
+describe("Login", () => {
+  it("should render without crashing", () => {
+    const wrapper = shallow(<Login />);
+    expect(wrapper.exists()).toEqual(true);
+  });
+
+  it("should have 2 input tags and 2 label tags", () => {
+    const wrapper = shallow(<Login />);
+    expect(wrapper.find("label")).toHaveLength(2);
+    expect(wrapper.find("input")).toHaveLength(2);
+  });
+});
+
+// Restore style injection after all tests
+afterAll(() => {
+  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
