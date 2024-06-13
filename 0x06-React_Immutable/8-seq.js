@@ -1,3 +1,4 @@
+// function named printBestStudent
 import { Seq } from 'immutable';
 
 const printBestStudents = (grades) => {
