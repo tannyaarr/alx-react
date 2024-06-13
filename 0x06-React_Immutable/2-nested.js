@@ -1,3 +1,5 @@
+import { getIn, fromJS } from 'immutable';
+
 export default function accessImmutableObject(object, array) {
-    return array.reduce((obj, key) => (obj && obj[key] !== undefined) ? obj[key] : undefined, object);
+	return getIn(fromJS(object), array);
 }
